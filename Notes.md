@@ -1,3 +1,10 @@
+# TODO
+1. create migrations
+2. create models with relationships
+3. plan out routes for controllers
+4. build controller actions and views
+
+
 # Project Requirements
 1. Build an MVC (Links to an external site.) Sinatra application.
 2. Use ActiveRecord (Links to an external site.) with Sinatra.
