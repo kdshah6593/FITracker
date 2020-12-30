@@ -8,4 +8,3 @@ run ApplicationController
 use ExercisesController
 use WorkoutsController
 use UsersController
-use Name=usersController
