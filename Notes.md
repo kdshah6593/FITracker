@@ -19,8 +19,8 @@
 
 # Project Idea
 # FiTracker - exercise tracker
-# Models - 1) User 2) Workout 3) Exercises 4) Workout_exercise
- 1. User has many workouts | User has many exercises through workouts | Workout belongs to User | Workout has many exercises | Exercise has many workouts | workouts_exercises belongs to workouts | workouts_exercises belongs to exercises
+# Models - 1) User 2) Workout 3) Exercises
+ 1. User has many workouts | User has many exercises through workouts | Workout belongs to User | Workout has many exercises | Exercise belongs to a workout
  2. Workout needs a User ID, Exercise needs a Workout ID
  3. Home Page - Options to Log in or Sign Up
  4. Logged in - See a feed of users' last workout | nav links to user profile
@@ -31,8 +31,7 @@
  User Table = id | first name | last name | age | username | password_digest | email
  Workout table = id | title (how to name this??) | timestamps | user_id
  Exercise Table = id | name | type (radio buttons) | reps (number) | sets (number) | time (number) | timestamps
- workouts_exercises table = id | workout_id | exericse_id
-
+ 
  - Make sure the forms for these tables when filled out are filled with valid inputs; no blanks!
 
 
