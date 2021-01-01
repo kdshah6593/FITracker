@@ -1,37 +1,46 @@
 class WorkoutsController < ApplicationController
 
-  # GET: /workouts
-  get "/workouts" do
-    erb :"/workouts/index.html"
-  end
+  #Create
+    #New Workout - Form GET
+    get "/workouts/new" do
+      erb :"/workouts/new.html"
+    end
 
-  # GET: /workouts/new
-  get "/workouts/new" do
-    erb :"/workouts/new.html"
-  end
+    #Add Workout POST
+    post "/workouts" do
+      redirect "/workouts"
+    end
 
-  # POST: /workouts
-  post "/workouts" do
-    redirect "/workouts"
-  end
+  #Read
+    #Read all workouts by all users - the view page will show the recent workouts
+    get "/workouts" do
+      erb :"/workouts/index.html"
+    end
 
-  # GET: /workouts/5
-  get "/workouts/:id" do
-    erb :"/workouts/show.html"
-  end
+    #Read all workouts by a user - the show page
+    get "/workouts/:username" do
+      #ERB File
+    end
 
-  # GET: /workouts/5/edit
-  get "/workouts/:id/edit" do
-    erb :"/workouts/edit.html"
-  end
+    #Read a specific workout by a specific user - the show page
+    get "/workouts/:username/:id" do
+      # erb :"/workouts/show.html"
+    end
 
-  # PATCH: /workouts/5
-  patch "/workouts/:id" do
-    redirect "/workouts/:id"
-  end
+  #Edit
+    #Edit a workout - Form GET
+    get "/workouts/:username/:id/edit" do
+      erb :"/workouts/edit.html"
+    end
+    #Update the workout - PATCH
+    patch "/workouts/:username/:id" do
+      redirect "/workouts/:username/:id"
+    end
 
-  # DELETE: /workouts/5/delete
-  delete "/workouts/:id/delete" do
-    redirect "/workouts"
-  end
+  #Delete
+    #Delete a workout
+    delete "/workouts/:username/:id/delete" do
+      redirect "/workouts/:username"
+    end
+  
 end

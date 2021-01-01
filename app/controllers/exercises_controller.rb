@@ -1,37 +1,55 @@
 class ExercisesController < ApplicationController
 
-  # GET: /exercises
-  get "/exercises" do
-    erb :"/exercises/index.html"
-  end
+  #Create
+    #New Exercise - Form GET
+    get "/workouts/username/workout_id/exercises/new" do
+      erb :"/exercises/new.html"
+    end
 
-  # GET: /exercises/new
-  get "/exercises/new" do
-    erb :"/exercises/new.html"
-  end
+    #Add Workout POST
+    post "/workouts/username/workout_id/exercises" do
+      redirect "/workouts"
+    end
 
-  # POST: /exercises
-  post "/exercises" do
-    redirect "/exercises"
-  end
+  #Read
+    #Read all exercises in a workout for a user
+    get "/workouts/username/workout_id/exercises" do
+      erb :"/workouts/index.html"
+    end
 
-  # GET: /exercises/5
-  get "/exercises/:id" do
-    erb :"/exercises/show.html"
-  end
+    #Read a specific exercise in a workout by a specific user - the show page
+    get "/workouts/username/workout_id/exercises/:id" do
+      # erb :"/workouts/show.html"
+    end
 
-  # GET: /exercises/5/edit
-  get "/exercises/:id/edit" do
-    erb :"/exercises/edit.html"
-  end
+  #Edit
+    #Edit a workout - Form GET
+    get "/workouts/username/workout_id/exercises/:id/edit" do
+      erb :"/workouts/edit.html"
+    end
+    #Update the workout - PATCH
+    patch "/workouts/username/workout_id/exercises/:id" do
+      redirect ""
+    end
 
-  # PATCH: /exercises/5
-  patch "/exercises/:id" do
-    redirect "/exercises/:id"
-  end
-
-  # DELETE: /exercises/5/delete
-  delete "/exercises/:id/delete" do
-    redirect "/exercises"
-  end
+  #Delete
+    #Delete a workout
+    delete "/workouts/username/workout_id/exercises/:id" do
+      redirect 
+    end
+  
 end
+
+
+# Exercises
+#For exercises, they are within a specific workout within a specific user
+#/workouts/username/workout_id/
+
+#Index GET /exercises           => /workouts/username/workout_id/exercises
+#New   GET /exercises/new       => /workouts/username/workout_id/exercises/new
+#Create POST /exercises         => /workouts/username/workout_id/exercises
+#Show GET /exercises/:id        => /workouts/username/workout_id/exercises/:id
+#Edit GET /exercises/:id/edit   => /workouts/username/workout_id/exercises/:id/edit
+#Update PATCH /exercises/:id    => /workouts/username/workout_id/exercises/:id
+#Delete DELETE /exercises/:id   => /workouts/username/workout_id/exercises/:id
+
