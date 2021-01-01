@@ -1,1 +1,21 @@
-<h1>Insert the form to create a new instance of your model.</h1>
+<h1>FITracker</h1>
+
+<h2>Add Your Next Workout!</h2>
+
+<form action="/workouts" method="POST">
+    <label for="workout_title"><h4>Workout Title: </h4></label>
+    <input type="text" name="workout[title]" id="workout_title" placeholder="Abs Burnout - Day 2">
+
+    <br><br>
+
+    <h4>Type of Workout:</h4>
+    <input type="radio" id="cardio" name="workout[workout_type]" value="Cardio">
+    <label for="cardio">Cardio</label>
+    <input type="radio" id="strength" name="workout[workout_type]" value="Strength">
+    <label for="strength">Strength</label>
+    <input type="radio" id="hiit" name="workout[workout_type]" value="HIIT">
+    <label for="hiit">HIIT</label>
+    
+    <br><br>
+    <input type="submit" value="Add Workout">
+</form>

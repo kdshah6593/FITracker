@@ -8,6 +8,8 @@ class WorkoutsController < ApplicationController
 
     #Add Workout POST
     post "/workouts" do
+      @user = User.find(session[:user_id])
+      @user.workouts.create(params[:workout])
       redirect "/workouts"
     end
 
