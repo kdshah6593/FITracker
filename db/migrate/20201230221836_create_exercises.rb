@@ -5,7 +5,7 @@ class CreateExercises < ActiveRecord::Migration
       t.integer :sets
       t.integer :reps
       t.integer :distance
-      t.time :duration
+      t.integer :duration
       t.integer :workout_id
       t.timestamps null: false
     end

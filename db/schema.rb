@@ -18,7 +18,7 @@ ActiveRecord::Schema.define(version: 20201230221836) do
     t.integer  "sets"
     t.integer  "reps"
     t.integer  "distance"
-    t.time     "duration"
+    t.integer  "duration"
     t.integer  "workout_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -34,10 +34,10 @@ ActiveRecord::Schema.define(version: 20201230221836) do
 
   create_table "workouts", force: :cascade do |t|
     t.string   "title"
-    t.string   "type"
+    t.string   "workout_type"
     t.integer  "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
   end
 
 end
