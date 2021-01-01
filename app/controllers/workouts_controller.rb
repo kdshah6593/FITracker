@@ -19,12 +19,12 @@ class WorkoutsController < ApplicationController
 
     #Read all workouts by a user - the show page
     get "/workouts/:username" do
-      #ERB File
+      erb :"/workouts/show.html"
     end
 
     #Read a specific workout by a specific user - the show page
     get "/workouts/:username/:id" do
-      # erb :"/workouts/show.html"
+      erb :"/workouts/show_workout.html"
     end
 
   #Edit
