@@ -1,1 +1,12 @@
-<h1>This is the Model's index page.</h1>
+<h1>FITracker</h1>
+
+<h3>Check out other users' latest workouts</h3>
+
+<% @workouts_sorted = @workouts.sort_by {|workout| workout.created_at}.reverse %>
+<% @workouts_sorted.each do |workout| %>
+    <div>
+        <h4><a href="/workouts/<%= workout.user.username %>/<%= workout.id %>"><%= workout.title %></a></h4>
+        <p>By <%= workout.user.username %></p>
+        <p>Exercises: <%= workout.exercises.length %></p>
+    </div>
+<% end %>

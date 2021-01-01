@@ -14,6 +14,7 @@ class WorkoutsController < ApplicationController
   #Read
     #Read all workouts by all users - the view page will show the recent workouts
     get "/workouts" do
+      @workouts = Workout.all
       erb :"/workouts/index.html"
     end
 
