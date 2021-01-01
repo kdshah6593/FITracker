@@ -1,4 +1,9 @@
 <h1>Login to FITracker</h1>
 
-<form>
+<p><%= @error %></p>
+<form action="/login" method="POST">
+    <input type="text" name="username">
+    <input type="text" name="password">
+
+    <input type="submit" value="Login">
 </form>

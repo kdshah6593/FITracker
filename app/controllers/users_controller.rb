@@ -6,7 +6,18 @@ class UsersController < ApplicationController
   end
 
   post "/login" do
-    redirect "/workouts"
+    if params[:username].empty? || params[:password].empty?
+      @error = "Please enter both username and password"
+      redirect "/login"
+    else
+      if @user = User.find_by(username: params[:username], password: params[:password])
+        session[user_id] = @user.id
+        redirect "/workouts"
+      else
+        @error = "Account not found"
+        redirect "/login"
+      end
+    end
   end
 
   # sign up
