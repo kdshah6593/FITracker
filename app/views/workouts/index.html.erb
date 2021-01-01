@@ -2,6 +2,10 @@
 
 <h3>Check out other users' latest workouts</h3>
 
+<% @workouts.each do |workout| %>
+    <p><%= workout.title %></p>
+<% end %>
+
 <% @workouts_sorted = @workouts.sort_by {|workout| workout.created_at}.reverse %>
 <% @workouts_sorted.each do |workout| %>
     <div>
