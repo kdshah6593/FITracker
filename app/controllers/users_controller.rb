@@ -10,13 +10,28 @@ class UsersController < ApplicationController
   end
 
   # sign up
-  get "/sign-up" do
-    #erb a sign-up form
+  get "/signup" do
+    erb :"users/signup.html"
   end
 
-  post "/sign-up" do
+  post "/signup" do
     #creates a user
+    #users need all credentials
+    #users can't create an account where username already exists
+    if params[:username].empty? || params[:email].empty? || params[:password].empty? || params[:first_name].empty? || params[:last_name].empty?
+      @error = "Please fill out all the fields"
+      redirect "/signup"
+    else
+      if User.find_by(username: params[:username])
+        @error = "Username already taken, please create another"
+        redirect "/signup"
+      else
+        @user = User.create(params)
+      end
+    end
+
     #login the user with sessions
+    session[:user_id] = @user.id
     redirect "/workouts"
   end
   
