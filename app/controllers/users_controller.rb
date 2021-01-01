@@ -20,6 +20,12 @@ class UsersController < ApplicationController
     end
   end
 
+  #logout
+  get "/logout" do
+    session.clear
+    redirect '/'
+  end
+
   # sign up
   get "/signup" do
     erb :"users/signup.html"
