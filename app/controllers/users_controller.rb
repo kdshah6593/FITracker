@@ -2,7 +2,7 @@ class UsersController < ApplicationController
 
   # login
   get "/login" do
-    #erb a login form
+    erb :"users/login.html"
   end
 
   post "/login" do
