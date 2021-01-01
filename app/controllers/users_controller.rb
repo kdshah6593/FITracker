@@ -21,13 +21,11 @@ class UsersController < ApplicationController
     if params[:username].empty? || params[:email].empty? || params[:password].empty? || params[:first_name].empty? || params[:last_name].empty?
       @error = "Please fill out all the fields"
       redirect "/signup"
+    elsif User.find_by(username: params[:username])
+      @error = "Username already taken, please create another"
+      redirect "/signup"
     else
-      if User.find_by(username: params[:username])
-        @error = "Username already taken, please create another"
-        redirect "/signup"
-      else
         @user = User.create(params)
-      end
     end
 
     #login the user with sessions
