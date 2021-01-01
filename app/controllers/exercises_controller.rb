@@ -6,36 +6,36 @@ class ExercisesController < ApplicationController
       erb :"/exercises/new.html"
     end
 
-    #Add Workout POST
+    #Add Exercise POST
     post "/workouts/username/workout_id/exercises" do
-      redirect "/workouts"
+      redirect "/workouts/username/workout_id/exercises"
     end
 
   #Read
     #Read all exercises in a workout for a user
     get "/workouts/username/workout_id/exercises" do
-      erb :"/workouts/index.html"
+      erb :"/exercises/index.html"
     end
 
     #Read a specific exercise in a workout by a specific user - the show page
     get "/workouts/username/workout_id/exercises/:id" do
-      # erb :"/workouts/show.html"
+      erb :"/exercises/show.html"
     end
 
   #Edit
-    #Edit a workout - Form GET
+    #Edit an exercise - Form GET
     get "/workouts/username/workout_id/exercises/:id/edit" do
-      erb :"/workouts/edit.html"
+      erb :"/exercises/edit.html"
     end
-    #Update the workout - PATCH
+    #Update the exercise - PATCH
     patch "/workouts/username/workout_id/exercises/:id" do
-      redirect ""
+      redirect "/workouts/username/workout_id/exercises/:id"
     end
 
   #Delete
-    #Delete a workout
+    #Delete a exercise
     delete "/workouts/username/workout_id/exercises/:id" do
-      redirect 
+      redirect "/workouts/username/workout_id/exercises/"
     end
   
 end
