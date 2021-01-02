@@ -16,16 +16,17 @@ class WorkoutsController < ApplicationController
   #Read
     get "/workouts" do
       @workouts = Workout.all
-      erb :"/workouts/index.html"
+      erb :"/workouts/index.html"   ######
     end
 
     get "/:username/workouts/:id" do
-      erb :"/workouts/show.html"
+      erb :"/workouts/show.html"    #######
     end
 
   #Edit
     get "/:username/workouts/:id/edit" do
-      erb :"/workouts/edit.html"
+      @workout = Workout.find(params[:id])
+      erb :"/workouts/edit.html"    #######
     end
 
     patch "/:username/workouts/:id" do
