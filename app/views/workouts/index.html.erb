@@ -6,7 +6,7 @@
 <% @workouts_sorted = @workouts.sort_by {|workout| workout.created_at}.reverse %>
 <% @workouts_sorted.each do |workout| %>
     <div>
-        <h4><a href="/workouts/<%= workout.user.username %>/<%= workout.id %>"><%= workout.title %></a></h4>
+        <h4><a href="/<%= workout.user.username %>/workouts/<%= workout.id %>"><%= workout.title %></a></h4>
         <p>By <%= workout.user.username %></p>
         <p>Exercises: <%= workout.exercises.length %></p>
     </div>
