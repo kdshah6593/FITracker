@@ -2,7 +2,7 @@
 
 <h2>Add an Exercise to Your Workout</h2>
 
-<form action="/:username/workouts/workout_id/exercises" method="POST">
+<form action="/<%= @workout.user.username %>/workouts/<%= @workout.id %>/exercises" method="POST">
     <label for="exercise_title"><h4>Exercise Title: </h4></label>
     <input type="text" name="exercise[title]" id="exercise_title" placeholder="Crunches">
 
