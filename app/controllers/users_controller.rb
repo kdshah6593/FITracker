@@ -14,11 +14,12 @@ class UsersController < ApplicationController
       @error = "Please enter both username and password"
       redirect "/login"
     else
-      if @user = User.find_by(username: params[:username], password: params[:password])
+      @user = User.find_by(username: params[:username])
+      if @user && user.authenticate(params[:password)
         session[user_id] = @user.id
         redirect "/workouts"
       else
-        @error = "Account not found"
+        @error = "Incorrect Password"
         redirect "/login"
       end
     end
