@@ -16,7 +16,7 @@ class WorkoutsController < ApplicationController
   #Read
     get "/workouts" do
       @workouts = Workout.all
-      erb :"/workouts/index.html"   ######
+      erb :"/workouts/index.html"
     end
 
     get "/:username/workouts/:id" do
@@ -31,7 +31,9 @@ class WorkoutsController < ApplicationController
     end
 
     patch "/:username/workouts/:id" do
-      redirect "/:username/workouts/:id"
+      @workout = Workout.find(params[:id])
+      @workout.update(params[:workout])
+      redirect "/#{params[:username]}/workouts/#{params[:id]}"
     end
 
   #Delete
