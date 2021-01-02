@@ -60,8 +60,9 @@ class UsersController < ApplicationController
 
   # -------------------------------------------------------------------
   # show page for user & all their workouts
-  get "/:username" do #need to make this into a slug
-    erb :"users/show.html"
+  get "/:username" do
+    if logged_in?
+    erb :"workouts/index.html"
   end
 
 

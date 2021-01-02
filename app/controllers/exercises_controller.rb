@@ -14,13 +14,11 @@ class ExercisesController < ApplicationController
     end
 
   #Edit
-    #Edit an exercise - Form GET
     get "/exercises/:id/edit" do
       @exercise = Exercise.find(params[:id])
       erb :"/exercises/edit.html"
     end
 
-    #Update the exercise - PATCH
     patch "/exercises/:id" do
       @exercise = Exercise.find(params[:id])
       @exercise.update(params[:exercise])
@@ -30,7 +28,6 @@ class ExercisesController < ApplicationController
     end
 
   #Delete
-    #Delete a exercise
     get "/exercises/:id/delete" do
       @exercise = Exercise.find(params[:id])
       @workout = Workout.find(@exercise.workout_id)
