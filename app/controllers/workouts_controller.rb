@@ -21,7 +21,7 @@ class WorkoutsController < ApplicationController
 
     get "/:username/workouts/:id" do
       @workout = Workout.find(params[:id])
-      erb :"/workouts/show.html"    #######
+      erb :"/workouts/show.html"
     end
 
   #Edit

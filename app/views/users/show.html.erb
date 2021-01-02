@@ -1,0 +1,10 @@
+<h1>FITracker</h1>
+
+<% @user.workouts.each do |workout| %>
+    <div>
+        <h4><%= workout.title%></h4>
+        <p><%= workout.workout_type %></p>
+        <a href="/<%= @user.username %>/workouts/<%= workout.id %>/edit">Edit</a>
+        <a href="/<%= @user.username %>/workouts/<%= workout.id %>/delete">Delete</a>
+    <div>
+<% end %>
