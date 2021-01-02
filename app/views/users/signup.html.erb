@@ -2,8 +2,22 @@
 
 <p><%= @error %></p>
 <form action="/signup" method="POST">
-    <input type="text" name="username">
-    <input type="text" name="password">
+    
+    <label for="first_name">First Name: </label>
+    <input type="text" name="first_name" id="first_name">
 
+    <label for="last_name">Last Name: </label>
+    <input type="text" name="last_name" id="last_name">
+
+    <label for="email">Email: </label>
+    <input type="text" name="email" id="email">
+    
+    
+    <label for="username">Username: </label>
+    <input type="text" name="username" id="username">
+
+    <label for="password">Password: </label>
+    <input type="text" name="password" id="password">
+    
     <input type="submit" value="Sign Up">
 </form>
