@@ -1,12 +1,10 @@
 class WorkoutsController < ApplicationController
 
   #Create
-    #New Workout - Form GET
     get "/workouts/new" do
       erb :"/workouts/new.html"
     end
 
-    #Add Workout POST
     post "/workouts" do
       @workout = Workout.create(params[:workout])
       @workout.user = current_user
@@ -16,36 +14,27 @@ class WorkoutsController < ApplicationController
     end
 
   #Read
-    #Read all workouts by all users - the view page will show the recent workouts
     get "/workouts" do
       @workouts = Workout.all
       erb :"/workouts/index.html"
     end
 
-    #Read all workouts by a user - the show page
-    get "/workouts/:username" do
+    get "/:username/workouts/:id" do
       erb :"/workouts/show.html"
     end
 
-    #Read a specific workout by a specific user - the show page
-    get "/workouts/:username/:id" do
-      erb :"/workouts/show_workout.html"
-    end
-
   #Edit
-    #Edit a workout - Form GET
-    get "/workouts/:username/:id/edit" do
+    get "/:username/workouts/:id/edit" do
       erb :"/workouts/edit.html"
     end
-    #Update the workout - PATCH
-    patch "/workouts/:username/:id" do
-      redirect "/workouts/:username/:id"
+
+    patch "/:username/workouts/:id" do
+      redirect "/:username/workouts/:id"
     end
 
   #Delete
-    #Delete a workout
-    delete "/workouts/:username/:id/delete" do
-      redirect "/workouts/:username"
+    delete "/:username/workouts/:id/delete" do
+      redirect "/:username"
     end
   
 end

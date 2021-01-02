@@ -57,5 +57,12 @@ class UsersController < ApplicationController
         redirect "/workouts"
     end
   end
-  
+
+  # -------------------------------------------------------------------
+  # show page for user & all their workouts
+  get "/:username" do #need to make this into a slug
+    erb :"users/show.html"
+  end
+
+
 end
