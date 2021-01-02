@@ -1,6 +1,8 @@
-<h1>FiTracker</h1>
+<h1>FITracker</h1>
 
 <h3><%= @workout.title %></h3>
+<a href="">Edit</a>
+<a href="">Delete</a>
 
 <% @workout.exercises.each do |exercise| %>
     <div>
@@ -9,5 +11,8 @@
         <p>Reps: <%= exercise.reps%></p>
         <p>Distance: <%= exercise.distance%></p>
         <p>Duration: <%= exercise.duration %></p>
+        <br>
+        <a href="/edit">Edit Exercise</a>
+        <a href="/delete">Delete Exercise</a>
     </div>
 <% end %>
