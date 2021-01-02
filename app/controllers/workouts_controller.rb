@@ -51,7 +51,7 @@ class WorkoutsController < ApplicationController
         if @workout && @workout.user == current_user
           erb :"/workouts/edit.html"
         else
-          redirect "/#{params[:username]}/workouts/#{params[:id]}"
+          redirect "/#{params[:username]}"
         end
       else
         redirect "/login"
