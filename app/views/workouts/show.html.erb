@@ -11,7 +11,7 @@
         <p>Distance: <%= exercise.distance%></p>
         <p>Duration: <%= exercise.duration %></p>
         <br>
-        <a href="/edit">Edit Exercise</a>
-        <a href="/delete">Delete Exercise</a>
+        <a href="/exercises/<%=exercise.id %>/edit">Edit Exercise</a>
+        <a href="/exercises/<%=exercise.id %>/delete">Delete Exercise</a>
     </div>
 <% end %>

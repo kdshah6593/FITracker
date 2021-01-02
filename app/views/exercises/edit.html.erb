@@ -1,1 +1,27 @@
-<h1>Insert the form to edit an instance of your model here.</h1>
+<h1>FITracker</h1>
+
+<h2>Edit Exercise</h2>
+
+<form action="/exercises/<%= @exercise.id %>" method="POST">
+    <input type="hidden" name="_method" value="PATCH">
+
+    <label for="exercise_title"><h4>Exercise Title: </h4></label>
+    <input type="text" name="exercise[title]" id="exercise_title" value="<%= @exercise.title %>">
+
+    <br><br>
+    
+    <label for="sets">Sets: </label>
+    <input type="text" id="sets" name="exercise[sets]" value="<%= @exercise.sets %>">
+    
+    <label for="reps">Reps: </label>
+    <input type="text" id="reps" name="exercise[reps]" value="<%= @exercise.reps %>">
+    
+    <label for="distance">Distance</label>
+    <input type="text" id="distance" name="exercise[distance]" value="<%= @exercise.distance %>">
+    
+    <label for="duration">Duration</label>
+    <input type="text" id="duration" name="exercise[duration]" value="<%= @exercise.duration %>">
+    
+    <br><br>
+    <input type="submit" value="Update Exercise">
+</form>

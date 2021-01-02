@@ -15,23 +15,27 @@ class ExercisesController < ApplicationController
 
   #Edit
     #Edit an exercise - Form GET
-    get "/:username/workouts/:id/exercises/edit" do
+    get "/exercises/:id/edit" do
+      @exercise - Exercise.find(params[:id])
       erb :"/exercises/edit.html"
     end
 
     #Update the exercise - PATCH
-    patch "/:username/workouts/:id/exercises/" do
+    patch "/exercises/:id" do
+      @exercise = Exercise.find(params[:id])
+      @exercise.update(params[:exercise])
+      @workout = Workout.find(@exercise.workout_id)
       
-      
-      redirect "/:username/workouts/:id"
+      redirect "/#{@workout.user.username}/workouts/#{@workout.id}"
     end
 
   #Delete
     #Delete a exercise
-    delete "/workouts/username/workout_id/exercises/:id" do
-      
-      
-      redirect "/:username/workouts/:id"
+    get "/exercises/:id/delete" do
+      @exercise = Exercise.find(params[:id])
+      @workout = Workout.find(@exercise.workout_id)
+      @exercise.destroy
+      redirect "/#{@workout.user.username}/workouts/#{@workout.id}"
     end
   
 end
