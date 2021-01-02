@@ -1,6 +1,7 @@
 <h1>FITracker</h1>
 
 <h3><%= @workout.title %></h3>
+<a href="/<%= @workout.user.username %>/workouts/<%= @workout.id %>/exercises/new">Add Exercise</a>
 
 <% @workout.exercises.each do |exercise| %>
     <div>
