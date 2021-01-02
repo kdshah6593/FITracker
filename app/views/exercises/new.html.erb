@@ -1,6 +1,7 @@
 <h1>FITracker</h1>
 
 <h2>Add an Exercise to Your Workout</h2>
+<%= @error %>
 
 <form action="/<%= @workout.user.username %>/workouts/<%= @workout.id %>/exercises" method="POST">
     <label for="exercise_title">Exercise Title: </label>
