@@ -2,7 +2,11 @@ class UsersController < ApplicationController
 
   # login
   get "/login" do
-    erb :"users/login.html"
+    if logged_in?
+      redirect "/workouts"
+    else
+      erb :"users/login.html"
+    end
   end
 
   post "/login" do
@@ -22,8 +26,11 @@ class UsersController < ApplicationController
 # -------------------------------------------------------------------
   #logout
   get "/logout" do
-    session.clear
-    redirect '/'
+    if logged_in?
+      session.clear
+      redirect "/login"
+    else
+      redirect "/"
   end
 # -------------------------------------------------------------------
   # signup
