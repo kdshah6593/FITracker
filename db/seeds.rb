@@ -1,9 +1,9 @@
-User.delete_all
-Workout.delete_all
-Exercise.delete_all
+User.destroy_all
+Workout.destroy_all
+Exercise.destroy_all
 
-john = User.create(username: "johnsmith", password_digest: "password", first_name: "John", last_name: "Smith", email: "johnsmith@email.com")
-jane = User.create(username: "janedoe", password_digest: "password", first_name: "Jane", last_name: "Doe", email: "janedoe@email.com")
+john = User.create(username: "johnsmith", password: "password", first_name: "John", last_name: "Smith", email: "johnsmith@email.com")
+jane = User.create(username: "janedoe", password: "password", first_name: "Jane", last_name: "Doe", email: "janedoe@email.com")
 
 
 w1 = Workout.create(title: "Cardiac Hill", workout_type: "Cardio" )
