@@ -37,8 +37,10 @@ class WorkoutsController < ApplicationController
     end
 
   #Delete
-    delete "/:username/workouts/:id/delete" do
-      redirect "/:username"
+    post "/:username/workouts/:id/delete" do
+      @workout = Workout.find(params[:id])
+      @workout.destroy
+      redirect "/#{params[:username]}"
     end
   
 end
