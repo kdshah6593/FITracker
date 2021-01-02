@@ -19,35 +19,34 @@ class UsersController < ApplicationController
       end
     end
   end
-
+# -------------------------------------------------------------------
   #logout
   get "/logout" do
     session.clear
     redirect '/'
   end
-
-  # sign up
+# -------------------------------------------------------------------
+  # signup
   get "/signup" do
-    erb :"users/signup.html"
+    if logged_in?
+      redirect "/workouts"
+    else
+      erb :"users/signup.html"
+    end
   end
 
-  post "/signup" do
-    #creates a user
-    #users need all credentials
-    #users can't create an account where username already exists
+  post "/signup" do #need all creds, check username exists
     if params[:username].empty? || params[:email].empty? || params[:password].empty? || params[:first_name].empty? || params[:last_name].empty?
       @error = "Please fill out all the fields"
       redirect "/signup"
     elsif User.find_by(username: params[:username])
       @error = "Username already taken, please create another"
       redirect "/signup"
-    else
+    else #create user and log in
         @user = User.create(params)
+        session[:user_id] = @user.user_id
+        redirect "/workouts"
     end
-
-    #login the user with sessions
-    session[:user_id] = @user.id
-    redirect "/workouts"
   end
   
 end
