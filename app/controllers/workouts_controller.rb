@@ -20,13 +20,14 @@ class WorkoutsController < ApplicationController
     end
 
     get "/:username/workouts/:id" do
+      @workout = Workout.find(params[:id])
       erb :"/workouts/show.html"    #######
     end
 
   #Edit
     get "/:username/workouts/:id/edit" do
       @workout = Workout.find(params[:id])
-      erb :"/workouts/edit.html"    #######
+      erb :"/workouts/edit.html"
     end
 
     patch "/:username/workouts/:id" do

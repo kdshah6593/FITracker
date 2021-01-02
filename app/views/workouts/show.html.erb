@@ -1,1 +1,13 @@
-<h1>This is the show page for an individual instance of your model.</h1>
+<h1>FiTracker</h1>
+
+<h3><%= @workout.title %></h3>
+
+<% @workout.exercises.each do |exercise| %>
+    <div>
+        <h4><%= exercise.title %></h4>
+        <p>Sets: <%= exercise.sets %></p>
+        <p>Reps: <%= exercise.reps%></p>
+        <p>Distance: <%= exercise.distance%></p>
+        <p>Duration: <%= exercise.duration %></p>
+    </div>
+<% end %>
