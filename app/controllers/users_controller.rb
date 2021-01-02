@@ -62,7 +62,11 @@ class UsersController < ApplicationController
   # show page for user & all their workouts
   get "/:username" do
     if logged_in?
-    erb :"workouts/index.html"
+      @user = current_user
+      erb :"users/show.html"
+    else
+      redirect "/login"
+    end
   end
 
 
