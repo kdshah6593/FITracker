@@ -13,8 +13,10 @@
             <p>Distance: <%= exercise.distance%></p>
             <p>Duration: <%= exercise.duration %></p>
             <br>
-            <button class="edit"><a href="/exercises/<%=exercise.id %>/edit">Edit Exercise</a></button>
-            <button class="delete"><a href="/exercises/<%=exercise.id %>/delete">Delete Exercise</a></button>
+            <% if current_user == exercise.workout.user%>
+                <button class="edit"><a href="/exercises/<%=exercise.id %>/edit">Edit Exercise</a></button>
+                <button class="delete"><a href="/exercises/<%=exercise.id %>/delete">Delete Exercise</a></button>
+            <% end %>
         </div>
     <% end %>
 </div>
