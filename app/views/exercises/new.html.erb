@@ -1,26 +1,26 @@
-<h1>FITracker</h1>
-
-<h2>Add an Exercise to Your Workout</h2>
+<h1 class="workout-header">Add an Exercise to Your Workout</h1>
 <%= @error %>
 
-<form action="/<%= @workout.user.username %>/workouts/<%= @workout.id %>/exercises" method="POST">
-    <label for="exercise_title">Exercise Title: </label>
-    <input type="text" name="exercise[title]" id="exercise_title" placeholder="Crunches">
+<div class="add-edit-container">
+    <form action="/<%= @workout.user.username %>/workouts/<%= @workout.id %>/exercises" method="POST">
+        <label class="col-25" for="exercise_title">Exercise Title: </label>
+        <input class="col-75" type="text" name="exercise[title]" id="exercise_title" placeholder="Crunches">
 
-    <br><br>
-    
-    <label for="sets">Sets: </label>
-    <input type="text" id="sets" name="exercise[sets]">
-    <br>
-    <label for="reps">Reps: </label>
-    <input type="text" id="reps" name="exercise[reps]">
-    <br>
-    <label for="distance">Distance</label>
-    <input type="text" id="distance" name="exercise[distance]">
-    <br>
-    <label for="duration">Duration</label>
-    <input type="text" id="duration" name="exercise[duration]">
-    
-    <br><br>
-    <input type="submit" value="Add Exercise">
-</form>
+        <br><br><br>
+        
+        <label class="col-25" for="sets">Sets: </label>
+        <input class="col-75" type="text" id="sets" name="exercise[sets]">
+        <br>
+        <label class="col-25" for="reps">Reps: </label>
+        <input class="col-75" type="text" id="reps" name="exercise[reps]">
+        <br>
+        <label class="col-25" for="distance">Distance</label>
+        <input class="col-75" type="text" id="distance" name="exercise[distance]">
+        <br>
+        <label class="col-25" for="duration">Duration</label>
+        <input class="col-75" type="text" id="duration" name="exercise[duration]">
+        
+        <br><br><br>
+        <input type="submit" value="Add Exercise">
+    </form>
+</div>

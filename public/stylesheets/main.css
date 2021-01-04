@@ -50,7 +50,6 @@ div.navigation ul li a.title:hover:not(.active) {
   div.navigation ul li {float: none;}
 }
 
-
 .wrapper {
   background-color: #8080f0;
 }
@@ -112,11 +111,13 @@ div.navigation ul li a.title:hover:not(.active) {
 .col-25 {
   float: left;
   width: 35%;
+  margin: 5px;
 }
 
 .col-75 {
   float: left;
   width: 50%;
+  margin: 5px;
 }
 
 /* --- Log In Page --- */
@@ -187,10 +188,6 @@ button a {
   color: #000;
 }
 
-button:hover {
-  background-color: #59a859;
-}
-
 button.new-workout {
   display: block;
   background-color: #80f080;
@@ -254,6 +251,10 @@ button.new-exercise a {
   font-size: 16px;
 }
 
+button:hover {
+  background-color: #59a859;
+}
+
 
 /* --- Add/Edit Workout --- */
 .add-edit-container {
@@ -279,3 +280,5 @@ button.new-exercise a {
   width: 70%;
   margin: 22px;
 }
+
+/* --- Add/Edit Exercise --- */
