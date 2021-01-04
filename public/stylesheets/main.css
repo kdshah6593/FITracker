@@ -136,3 +136,33 @@ div.navigation ul li a.title:hover:not(.active) {
   padding: 20px;
 }
 
+/* --- Workout --- */
+
+.workout-header {
+  text-align: center;
+}
+
+.workout-subtext {
+  text-align: center;
+}
+
+.workout-section {
+  border: 1px solid #80f080;
+  padding: 10px;
+  margin: 10px;
+  text-align: center;
+}
+
+div.workout-section p {
+  margin: 0;
+  padding: 0;  
+}
+
+div.workout-section p:first-child {
+  font-size: 32px;
+}
+
+div.workout-section p a {
+  color: #80f080;
+}
+

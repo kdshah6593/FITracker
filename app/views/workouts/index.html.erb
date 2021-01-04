@@ -1,12 +1,12 @@
-<h1>FITracker</h1>
+<h1 class="workout-header"><span class="app-name">FI<span class="line">Tracker</span></span> Workout Feed</h1>
 
-<h3>Check out other users' latest workouts</h3>
+<h3 class="workout-subtext">Check out other users' latest workouts</h3>
 <br>
 
 <% @workouts_sorted = @workouts.sort_by {|workout| workout.created_at}.reverse %>
 <% @workouts_sorted.each do |workout| %>
-    <div>
-        <h4><a href="/<%= workout.user.username %>/workouts/<%= workout.id %>"><%= workout.title %></a></h4>
+    <div class="workout-section">
+        <p><a href="/<%= workout.user.username %>/workouts/<%= workout.id %>"><%= workout.title %></a></p>
         <p>By <%= workout.user.username %></p>
         <p>Exercises: <%= workout.exercises.length %></p>
     </div>
