@@ -253,3 +253,29 @@ button.new-exercise a {
   text-decoration: none;
   font-size: 16px;
 }
+
+
+/* --- Add --- */
+.add-container {
+  margin-left: 150px;
+  margin-right: 150px;
+  text-align: center;
+}
+
+.add-container form {
+  background-color: #80f080;
+  border-radius: 10px;
+  padding: 20px;
+}
+
+.col-add1 {
+  display:block;
+  float: left;
+  width: 25%;
+}
+
+.col-add2 {
+  display: block;
+  width: 70%;
+  margin: 22.5px;
+}
