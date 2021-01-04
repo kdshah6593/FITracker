@@ -1,15 +1,15 @@
 <h1 class="workout-header">Add Your Next Workout!</h1>
 <%= @error %>
 
-<div class="add-container">
+<div class="add-edit-container">
     <form action="/workouts" method="POST">
-        <label class="col-add1" for="workout_title"><h4>Workout Title: </h4></label>
-        <input class="col-add2" type="text" name="workout[title]" id="workout_title" placeholder="Abs Burnout - Day 2">
+        <label class="col-1" for="workout_title"><h4>Workout Title: </h4></label>
+        <input class="col-2" type="text" name="workout[title]" id="workout_title" placeholder="Abs Burnout - Day 2">
 
         <br><br>
 
-        <label class="col-add1" for="workout_type"><h4>Type of Workout:</h4></label>
-        <div class="col-add2" id="workout-type">
+        <label class="col-1" for="workout_type"><h4>Type of Workout:</h4></label>
+        <div class="col-2" class="workout-type">
             <input type="radio" id="cardio" name="workout[workout_type]" value="Cardio">
             <label for="cardio">Cardio</label>
             <input type="radio" id="strength" name="workout[workout_type]" value="Strength">

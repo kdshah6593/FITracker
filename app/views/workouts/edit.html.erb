@@ -1,25 +1,26 @@
-<h1>FITracker</h1>
+<h1 class="workout-header">Edit Workout</h1>
 
-<h2>Edit Workout</h2>
+<div class='add-edit-container'>
+    <form action="/<%= @workout.user.username %>/workouts/<%= @workout.id %>" method="POST">
+        <input type="hidden" name="_method" value="PATCH">
 
-<form action="/<%= @workout.user.username %>/workouts/<%= @workout.id %>" method="POST">
-    <input type="hidden" name="_method" value="PATCH">
+        <label class="col-1"for="workout_title"><h4>Workout Title: </h4></label>
+        <input class="col-2" type="text" name="workout[title]" id="workout_title" value="<%= @workout.title %>">
 
-    <label for="workout_title"><h4>Workout Title: </h4></label>
-    <input type="text" name="workout[title]" id="workout_title" value="<%= @workout.title %>">
+        <br><br>
 
-    <br><br>
+        <label class="col-1" for="workout_type"><h4>Type of Workout:</h4></label>
+            <div class="col-2" class="workout-type">
+            <input type="radio" id="cardio" name="workout[workout_type]" value="Cardio" <%='checked' if @workout.workout_type == "Cardio" %>>
+            <label for="cardio">Cardio</label>
 
-    <h4>Type of Workout:</h4>
-    <input type="radio" id="cardio" name="workout[workout_type]" value="Cardio" <%='checked' if @workout.workout_type == "Cardio" %>>
-    <label for="cardio">Cardio</label>
+            <input type="radio" id="strength" name="workout[workout_type]" value="Strength" <%='checked' if @workout.workout_type == "Strength" %>>
+            <label for="strength">Strength</label>
 
-    <input type="radio" id="strength" name="workout[workout_type]" value="Strength" <%='checked' if @workout.workout_type == "Strength" %>>
-    <label for="strength">Strength</label>
-
-    <input type="radio" id="hiit" name="workout[workout_type]" value="HIIT" <%='checked' if @workout.workout_type == "HIIT" %>>
-    <label for="hiit">HIIT</label>
-    
-    <br><br>
-    <input type="submit" value="Update Workout">
-</form>
+            <input type="radio" id="hiit" name="workout[workout_type]" value="HIIT" <%='checked' if @workout.workout_type == "HIIT" %>>
+            <label for="hiit">HIIT</label>
+        </div>
+        <br><br>
+        <input type="submit" value="Update Workout">
+    </form>
+</div>
