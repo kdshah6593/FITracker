@@ -15,7 +15,7 @@ class WorkoutsController < ApplicationController
           @workout = Workout.create(params[:workout])
           @workout.user = current_user
           @workout.save
-          redirect "/workouts/#{current_user.username}/#{@workout.id}"
+          redirect "/#{current_user.username}/workouts/#{@workout.id}"
         else
           @error = "Make sure to fill out each item"
           redirect "/workouts/new"
