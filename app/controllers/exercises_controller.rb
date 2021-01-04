@@ -22,7 +22,7 @@ class ExercisesController < ApplicationController
           redirect "/#{params[:username]}/workouts/#{params[:id]}"
         else
           @error = "Exercise must include at least a title"
-          redirect "/#{params[:username]}/workouts/#{params[:id]}/edit"
+          redirect "/#{params[:username]}/workouts/#{params[:id]}/exercises/new"
         end
       else
         redirect "/login"
