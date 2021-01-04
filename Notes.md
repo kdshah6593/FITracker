@@ -63,3 +63,11 @@
 7. Prepare a short video demo with narration describing how a user would interact with your working application.
 8. Write a blog post about the project and process.
 9. When done, submit your GitHub repo's URL, a link to your video demo, and a link to your blog post in the corresponding text boxes in the right rail. Hit "I'm done" to wrap it up.
+
+
+
+
+---------
+# Additional Features
+1. Add Comments to People's Workouts
+2. Include Videos for Exercises to show form & hitting new goals
