@@ -1,27 +1,27 @@
-<h1>FITracker</h1>
+<h1 class="workout-header">Edit Exercise</h1>
 
-<h2>Edit Exercise</h2>
+<div class="add-edit-container">
+    <form action="/exercises/<%= @exercise.id %>" method="POST">
+        <input type="hidden" name="_method" value="PATCH">
 
-<form action="/exercises/<%= @exercise.id %>" method="POST">
-    <input type="hidden" name="_method" value="PATCH">
+        <label class="col-25" for="exercise_title">Exercise Title: </label>
+        <input class="col-75" type="text" name="exercise[title]" id="exercise_title" value="<%= @exercise.title %>">
 
-    <label for="exercise_title">Exercise Title: </label>
-    <input type="text" name="exercise[title]" id="exercise_title" value="<%= @exercise.title %>">
-
-    <br><br>
-    
-    <label for="sets">Sets: </label>
-    <input type="text" id="sets" name="exercise[sets]" value="<%= @exercise.sets %>">
-    <br>
-    <label for="reps">Reps: </label>
-    <input type="text" id="reps" name="exercise[reps]" value="<%= @exercise.reps %>">
-    <br>
-    <label for="distance">Distance</label>
-    <input type="text" id="distance" name="exercise[distance]" value="<%= @exercise.distance %>">
-    <br>
-    <label for="duration">Duration</label>
-    <input type="text" id="duration" name="exercise[duration]" value="<%= @exercise.duration %>">
-    
-    <br><br>
-    <input type="submit" value="Update Exercise">
-</form>
+        <br><br><br>
+        
+        <label class="col-25" for="sets">Sets: </label>
+        <input class="col-75" type="text" id="sets" name="exercise[sets]" value="<%= @exercise.sets %>">
+        <br>
+        <label class="col-25" for="reps">Reps: </label>
+        <input class="col-75" type="text" id="reps" name="exercise[reps]" value="<%= @exercise.reps %>">
+        <br>
+        <label class="col-25" for="distance">Distance</label>
+        <input class="col-75" type="text" id="distance" name="exercise[distance]" value="<%= @exercise.distance %>">
+        <br>
+        <label class="col-25" for="duration">Duration</label>
+        <input class="col-75" type="text" id="duration" name="exercise[duration]" value="<%= @exercise.duration %>">
+        
+        <br><br><br>
+        <input type="submit" value="Update Exercise">
+    </form>
+<div>
