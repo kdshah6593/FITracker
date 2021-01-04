@@ -10,15 +10,16 @@ class WorkoutsController < ApplicationController
     end
 
     post "/workouts" do
+      binding.pry
       if logged_in?
-        if !params[:workout][:title].empty? || !params[:workout][:workout_type].empty?
+        if params[:workout][:title] == "" || params[:workout].has_key?(:workout_type) == false
+          @error = "Make sure to fill out each item"
+          redirect "/workouts/new"
+        else
           @workout = Workout.create(params[:workout])
           @workout.user = current_user
           @workout.save
           redirect "/#{current_user.username}/workouts/#{@workout.id}"
-        else
-          @error = "Make sure to fill out each item"
-          redirect "/workouts/new"
         end
       else
         redirect "/login"
