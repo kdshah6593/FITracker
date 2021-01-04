@@ -4,7 +4,7 @@
 
 <% @user.workouts.each do |workout| %>
     <div class="workout-section">
-        <p><%= workout.title%></p>
+        <p><a href="/<%= workout.user.username %>/workouts/<%= workout.id %>"><%= workout.title%></a></p>
         <p>Type: <%= workout.workout_type %></p>
         <button class="edit"><a href="/<%= @user.username %>/workouts/<%= workout.id %>/edit">Edit</a></button>
         <button class="delete"><a href="/<%= @user.username %>/workouts/<%= workout.id %>/delete">Delete</a></button>
