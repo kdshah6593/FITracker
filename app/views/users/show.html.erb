@@ -1,4 +1,6 @@
-<button class="new-workout"><a href="/workouts/new">New Workout</a></button>
+<% if current_user == @user %>
+    <button class="new-workout"><a href="/workouts/new">New Workout</a></button>
+<% end %>
 
 <h1 class="workout-header"><%=@user.first_name%>'s Workouts</h1>
 
