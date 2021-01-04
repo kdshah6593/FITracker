@@ -1,5 +1,6 @@
 body {
   margin: 0;
+  background-color: #8080f0;
 }
 
 div.navigation ul {
@@ -7,7 +8,7 @@ div.navigation ul {
   margin: 0;
   padding: 0;
   overflow: hidden;
-  background-color: #f08080;
+  background-color: #fff;
 }
 
 div.navigation ul li {
@@ -23,7 +24,7 @@ div.navigation ul li a {
 }
 
 div.navigation ul li a:hover:not(.active) {
-  background-color: #eca2a2;
+  background-color: #80f080;
 }
 
 div.navigation ul li a.active {
@@ -33,9 +34,15 @@ div.navigation ul li a.active {
 div.navigation ul li.title {
   float: right;
   padding: 14px 16px;
+  color: #80f080;
 }
 
 @media screen and (max-width: 600px) {
   div.navigation ul li.title,
   div.navigation ul li {float: none;}
+}
+
+
+.wrapper {
+  background-color: #8080f0;
 }
