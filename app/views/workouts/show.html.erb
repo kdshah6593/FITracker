@@ -1,17 +1,17 @@
-<h1>FITracker</h1>
+<button class="new-exercise"><a href="/<%= @workout.user.username %>/workouts/<%= @workout.id %>/exercises/new">Add Exercise</a></button>
+<h1 class="exercise-header"><%= @workout.title %></h1>
 
-<h3><%= @workout.title %></h3>
-<a href="/<%= @workout.user.username %>/workouts/<%= @workout.id %>/exercises/new">Add Exercise</a>
-
-<% @workout.exercises.each do |exercise| %>
-    <div>
-        <h4><%= exercise.title %></h4>
-        <p>Sets: <%= exercise.sets %></p>
-        <p>Reps: <%= exercise.reps%></p>
-        <p>Distance: <%= exercise.distance%></p>
-        <p>Duration: <%= exercise.duration %></p>
-        <br>
-        <a href="/exercises/<%=exercise.id %>/edit">Edit Exercise</a>
-        <a href="/exercises/<%=exercise.id %>/delete">Delete Exercise</a>
-    </div>
-<% end %>
+<div class="exercise-container">
+    <% @workout.exercises.each do |exercise| %>
+        <div class="exercise-section">
+            <p><%= exercise.title %></p>
+            <p>Sets: <%= exercise.sets %></p>
+            <p>Reps: <%= exercise.reps%></p>
+            <p>Distance: <%= exercise.distance%></p>
+            <p>Duration: <%= exercise.duration %></p>
+            <br>
+            <button class="edit"><a href="/exercises/<%=exercise.id %>/edit">Edit Exercise</a></button>
+            <button class="delete"><a href="/exercises/<%=exercise.id %>/delete">Delete Exercise</a></button>
+        </div>
+    <% end %>
+</div>

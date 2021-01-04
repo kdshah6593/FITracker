@@ -173,7 +173,6 @@ div.workout-section p.right {
   font-size: 16px;
 }
 
-
 button.edit, button.delete {
   background-color: #80f080;
   border: none;
@@ -204,6 +203,53 @@ button.new-workout {
 }
 
 button.new-workout a {
+  text-decoration: none;
+  font-size: 16px;
+}
+
+/* --- Exercise Page --- */
+
+.exercise-header {
+  text-align: center;
+  font-size: 40px;
+  margin: 0px;
+}
+
+.exercise-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.exercise-section {
+  border: 1px solid #80f080;
+  padding: 10px;
+  margin: 10px;
+  text-align: center;
+}
+
+div.exercise-section p {
+  margin: 0;
+  padding: 0;
+  font-size: 20px;
+}
+
+div.exercise-section p:first-child {
+  font-size: 32px;
+}
+
+button.new-exercise {
+  display: block;
+  background-color: #80f080;
+  color: #000;
+  padding: 5px;
+  border: none;
+  border-radius: 5px;
+  margin-top: 5px;
+  margin-left: 5px;;
+}
+
+button.new-exercise a {
   text-decoration: none;
   font-size: 16px;
 }
