@@ -1,26 +1,25 @@
-<h1>Sign Up for FITracker</h1>
+<h1 class="signup-header">Sign Up for <span class="app-name">FI<span class="line">Tracker</span></span></h1>
 
-<h3>Fill out all the information below to get started</h3>
+<h3 class="signup-subtext">Fill out all the information below to get started</h3>
 
 <p><%= @error %></p>
-<form action="/signup" method="POST">
-    
-    <label for="first_name">First Name: </label>
-    <input type="text" name="first_name" id="first_name">
-    <br>
-    <label for="last_name">Last Name: </label>
-    <input type="text" name="last_name" id="last_name">
-    <br>
-    <label for="email">Email: </label>
-    <input type="text" name="email" id="email">
-    <br>
-    <br>
-    <label for="username">Username: </label>
-    <input type="text" name="username" id="username">
-    <br>
-    <label for="password">Password: </label>
-    <input type="text" name="password" id="password">
-    <br>
-    <br>
-    <input type="submit" value="Sign Up">
-</form>
+<div class="signup-container">
+    <form action="/signup" method="POST">
+        <label class="col-25" for="first_name">First Name: </label>
+        <input class="col-75" type="text" name="first_name" id="first_name">
+        <br>
+        <label class="col-25" for="last_name">Last Name: </label>
+        <input class="col-75" type="text" name="last_name" id="last_name">
+        <br>
+        <label class="col-25" for="email">Email: </label>
+        <input class="col-75" type="text" name="email" id="email">
+        <br><br>
+        <label class="col-25" for="username">Username: </label>
+        <input class="col-75" type="text" name="username" id="username">
+        <br>
+        <label class="col-25" for="password">Password: </label>
+        <input class="col-75" type="text" name="password" id="password">
+        <br><br>
+        <input type="submit" value="Sign Up">
+    </form>
+</div>

@@ -87,3 +87,38 @@ div.navigation ul li a.title:hover:not(.active) {
   }
 
 
+/* --- Sign Up Page --- */
+
+.signup-header {
+  text-align: center;
+}
+
+.signup-subtext {
+  text-align: center;
+}
+
+.signup-container {
+  margin-left: 150px;
+  margin-right: 150px;
+  text-align: center;
+}
+
+.signup-container form {
+  background-color: #80f080;
+  border-radius: 10px;
+  padding: 20px;
+}
+
+.col-25 {
+  float: left;
+  width: 35%;
+}
+
+.col-75 {
+  float: left;
+  width: 50%;
+}
+
+
+
+
