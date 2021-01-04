@@ -23,9 +23,9 @@
         <nav>
           <ul>
             <li class="left"><a class="title" href="/workouts"><span class="app-name">FI<span class="line">Tracker</span></span></a></li>
-            <li><a href="/workouts">Home</a></li>
-            <li><a href="/<%= current_user.username%>">Profile</a></li>
             <li><a href="/logout">Logout</a></li>
+            <li><a href="/<%= current_user.username%>">Profile</a></li>
+            <li><a href="/workouts">Home</a></li>
           </ul>
         </nav>
       <% else %>
