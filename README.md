@@ -1,5 +1,8 @@
 # FITracker
 
+## Description
+FITracker is a web application developed using Sinatra and ActiveRecord incorporating CRUD and MVC principles. The application can sign up and login users that can add workouts to their profile. Per individual workout, a user can add exercises. Users can view others exercises as well. 
+
 ## Usage
 
 To use this app, clone this repo, run 'rake db:migrate' and then run 'shotgun'. Everything will already be set up. 
