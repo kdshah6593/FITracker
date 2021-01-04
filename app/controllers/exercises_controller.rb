@@ -1,4 +1,6 @@
+require 'rack-flash'
 class ExercisesController < ApplicationController
+  use Rack::Flash
 
   #Create
     get "/:username/workouts/:id/exercises/new" do

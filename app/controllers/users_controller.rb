@@ -1,4 +1,6 @@
+require 'rack-flash'
 class UsersController < ApplicationController
+  use Rack::Flash
 
   # login
   get "/login" do
