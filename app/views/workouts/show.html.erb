@@ -1,4 +1,7 @@
-<button class="new-exercise"><a href="/<%= @workout.user.username %>/workouts/<%= @workout.id %>/exercises/new">Add Exercise</a></button>
+<% if current_user == @workout.user%>
+    <button class="new-exercise"><a href="/<%= @workout.user.username %>/workouts/<%= @workout.id %>/exercises/new">Add Exercise</a></button>
+<% end %>
+
 <h1 class="exercise-header"><%= @workout.title %></h1>
 
 <div class="exercise-container">
