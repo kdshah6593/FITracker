@@ -11,6 +11,10 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Goldman&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=MuseoModerno:wght@500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/stylesheets/main.css" />
   </head>
   <body>
@@ -18,16 +22,16 @@
       <% if logged_in? %>
         <nav>
           <ul>
-            <li class="title">FITracker</li>
+            <li class="left"><a class="title" href="/workouts"><span class="app-name">FI<span class="line">Tracker</span></span></a></li>
             <li><a href="/workouts">Home</a></li>
-            <li><a href="">Profile</a></li>
+            <li><a href="/<%= current_user.username%>">Profile</a></li>
             <li><a href="/logout">Logout</a></li>
           </ul>
         </nav>
       <% else %>
         <nav>
             <ul>
-              <li class="title">FITracker</li>
+              <li class="left"><a class="title" href="/"><span class="app-name">FI<span class="line">Tracker</span></span></a></li>
               <li><a href="/login">Log In</a></li>
               <li><a href="/signup">Sign Up</a></li>
             </ul>

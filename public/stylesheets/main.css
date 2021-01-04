@@ -1,23 +1,33 @@
+* {
+  font-family: 'MuseoModerno', cursive;
+}
+
 body {
   margin: 0;
   background-color: #8080f0;
 }
+
+/* --- Layout CSS --- */
 
 div.navigation ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
   overflow: hidden;
-  background-color: #fff;
+  background-color: #000;
 }
 
 div.navigation ul li {
+  float: right;
+}
+
+div.navigation ul li.left {
   float: left;
 }
 
 div.navigation ul li a {
   display: block;
-  color: black;
+  color: #fff;
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
@@ -27,14 +37,12 @@ div.navigation ul li a:hover:not(.active) {
   background-color: #80f080;
 }
 
-div.navigation ul li a.active {
-  background-color: rgb(152, 192, 197);
+div.navigation ul li a.title {
+  color: #80f080;
 }
 
-div.navigation ul li.title {
-  float: right;
-  padding: 14px 16px;
-  color: #80f080;
+div.navigation ul li a.title:hover:not(.active) {
+  background-color: #fff;
 }
 
 @media screen and (max-width: 600px) {
@@ -46,3 +54,36 @@ div.navigation ul li.title {
 .wrapper {
   background-color: #8080f0;
 }
+
+/* --- Welcome Page CSS --- */
+.welcome-title {
+  text-align: center;
+  font-size: 44px;
+}
+
+.welcome-content h3 {
+  text-align: center;
+  font-size: 26px;
+}
+
+.welcome-content p {
+  text-align: center;
+  font-size: 20px;
+  font-weight: 600;
+  border: 5px solid #80f080;
+  margin-left: 100px;
+  margin-right: 100px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.app-name {
+  font-family: 'Goldman', cursive;
+}
+
+.line {
+  text-decoration: underline;
+  font-family: 'Goldman', cursive;
+  }
+
+
