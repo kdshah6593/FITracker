@@ -1,14 +1,16 @@
-<h1>Log In to FITracker</h1>
+<h1 class="login-header">Log In to <span class="app-name">FI<span class="line">Tracker</span></span></h1>
 
 <p><%= @error %></p>
 
-<form action="/login" method="POST">
-    
-    <label for="username">Username: </label>
-    <input type="text" name="username" id="username">
-    <br><br>
-    <label for="password">Password: </label>
-    <input type="text" name="password" id="password">
-    <br><br>
-    <input type="submit" value="Log In">
-</form>
+<div class="login-container">
+    <form action="/login" method="POST">
+        
+        <label class="col-25" for="username">Username: </label>
+        <input class="col-75" type="text" name="username" id="username">
+        <br><br>
+        <label class="col-25" for="password">Password: </label>
+        <input class="col-75" type="text" name="password" id="password">
+        <br><br>
+        <input type="submit" value="Log In">
+    </form>
+</div>

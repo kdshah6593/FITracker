@@ -119,6 +119,20 @@ div.navigation ul li a.title:hover:not(.active) {
   width: 50%;
 }
 
+/* --- Log In Page --- */
+.login-header {
+  text-align: center;
+}
 
+.login-container {
+  margin-left: 150px;
+  margin-right: 150px;
+  text-align: center;
+}
 
+.login-container form {
+  background-color: #80f080;
+  border-radius: 10px;
+  padding: 20px;
+}
 
