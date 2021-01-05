@@ -46,8 +46,16 @@ class UsersController < ApplicationController
   end
 
   post "/signup" do #need all creds, check username exists
+    binding.pry
+    params[:first_name] = params[:first_name].strip
+    params[:last_name] = params[:last_name].strip
+    params[:username] = params[:username].strip
+    binding.pry
     if params[:username].empty? || params[:email].empty? || params[:password].empty? || params[:first_name].empty? || params[:last_name].empty?
       flash[:message] = "Please fill out all the fields"
+      redirect "/signup"
+    elsif params[:username].match(/[^a-zA-Z0-9]/)
+      flash[:message] = "Please only use letters and numbers for the username"
       redirect "/signup"
     elsif User.find_by(username: params[:username])
       flash[:message] = "Username already taken, please create another"
