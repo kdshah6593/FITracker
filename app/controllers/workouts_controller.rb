@@ -13,7 +13,7 @@ class WorkoutsController < ApplicationController
     post "/workouts" do
       if logged_in?
         if params[:workout][:title] == "" || params[:workout].has_key?(:workout_type) == false
-          @error = "Make sure to fill out each item"
+          flash[:message] = "Make sure to fill out each item"
           redirect "/workouts/new"
         else
           @workout = Workout.create(params[:workout])
