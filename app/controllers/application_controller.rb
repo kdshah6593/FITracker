@@ -1,4 +1,6 @@
 require './config/environment'
+require 'dotenv/load'
+require 'securerandom'
 require 'sinatra/base'
 require 'sinatra/flash'
 
@@ -9,7 +11,8 @@ class ApplicationController < Sinatra::Base
     set :public_folder, 'public'
     set :views, 'app/views'
     enable :sessions
-    set :session_secret, "secretsecret"
+    # confirm if this is correct
+    set :session_secret, ENV.fetch('SESSION_SECRET')
   end
 
   get "/" do
