@@ -18,7 +18,6 @@ class UsersController < ApplicationController
       @user = User.find_by(username: params[:username])
       if @user && @user.authenticate(params[:password])
         session[:user_id] = @user.id
-        binding.pry
         redirect "/workouts"
       else
         flash[:message] = "Incorrect Password"
@@ -61,7 +60,7 @@ class UsersController < ApplicationController
       redirect "/signup"
     else #create user and log in
         @user = User.create(params)
-        session[:user_id] = @user.user_id
+        session[:user_id] = @user.id
         redirect "/workouts"
     end
   end
