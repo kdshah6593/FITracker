@@ -1,7 +1,7 @@
 <h1 class="workout-header">Add an Exercise to Your Workout</h1>
 
 <% if flash.has_key?(:message) %>
-    <%= flash[:message] %>
+    <div class="error"><%= flash[:message] %></div>
 <% end %>
 
 <div class="add-edit-container">

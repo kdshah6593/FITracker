@@ -3,7 +3,7 @@
 <h3 class="signup-subtext">Fill out all the information below to get started</h3>
 
 <% if flash.has_key?(:message) %>
-    <%= flash[:message] %>
+    <div class="error"><%= flash[:message] %></div>
 <% end %>
 
 <div class="signup-container">

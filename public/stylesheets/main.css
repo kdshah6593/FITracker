@@ -256,7 +256,7 @@ button:hover {
 }
 
 
-/* --- Add/Edit Workout --- */
+/* --- Add/Edit Workout & Exercise --- */
 .add-edit-container {
   margin-left: 150px;
   margin-right: 150px;
@@ -281,4 +281,9 @@ button:hover {
   margin: 22px;
 }
 
-/* --- Add/Edit Exercise --- */
+/* --- Error Messaging--- */
+div.error {
+  text-align: center;
+  color: red;
+  padding: 3px;
+}

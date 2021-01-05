@@ -1,7 +1,7 @@
 <h1 class="login-header">Log In to <span class="app-name">FI<span class="line">Tracker</span></span></h1>
 
 <% if flash.has_key?(:message) %>
-    <%= flash[:message] %>
+    <div class="error"><%= flash[:message] %></div>
 <% end %>
 
 <div class="login-container">
