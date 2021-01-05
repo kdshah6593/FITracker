@@ -11,8 +11,8 @@ class ApplicationController < Sinatra::Base
     set :public_folder, 'public'
     set :views, 'app/views'
     enable :sessions
-    # confirm if this is correct
-    set :session_secret, ENV.fetch('SESSION_SECRET')
+    # find out how to use ENV.fetch
+    set :session_secret, "secretsecret"
   end
 
   get "/" do
