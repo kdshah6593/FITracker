@@ -10,8 +10,9 @@
             <p><%= exercise.title %></p>
             <p>Sets: <%= exercise.sets %></p>
             <p>Reps: <%= exercise.reps%></p>
-            <p>Distance: <%= exercise.distance%></p>
-            <p>Duration: <%= exercise.duration %></p>
+            <p>Weight: <%= exercise.weight%> lbs</p>
+            <p>Distance: <%= exercise.distance%> miles</p>
+            <p>Duration: <%= exercise.duration %> minutes</p>
             <br>
             <% if current_user == exercise.workout.user%>
                 <button class="edit"><a href="/exercises/<%=exercise.id %>/edit">Edit Exercise</a></button>
