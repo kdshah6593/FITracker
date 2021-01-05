@@ -5,7 +5,7 @@ FITracker is a web application developed using Sinatra and ActiveRecord incorpor
 
 ## Usage
 
-To use this app, clone this repo, 'cd' into the directory, run 'rake db:migrate' and then run 'shotgun'. Everything will already be set up. 
+To use this app, clone this repo, 'cd' into the directory, run 'bundle install', run 'rake db:migrate' and then run 'shotgun'. Everything will already be set up. 
 
 ## Contributing
 Bug reports and pull requests are welcome on GitHub at https://github.com/kdshah6593/FITracker. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [code of conduct](https://github.com/kdshah6593/FITracker/blob/main/CODE_OF_CONDUCT.md).
