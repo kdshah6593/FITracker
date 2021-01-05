@@ -2,7 +2,10 @@
 
 <h3 class="signup-subtext">Fill out all the information below to get started</h3>
 
-<p><%= @error %></p>
+<% if flash.has_key?(:message) %>
+    <%= flash[:message] %>
+<% end %>
+
 <div class="signup-container">
     <form action="/signup" method="POST">
         <label class="col-25" for="first_name">First Name: </label>

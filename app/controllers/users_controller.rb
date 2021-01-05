@@ -22,7 +22,7 @@ class UsersController < ApplicationController
         session[:user_id] = @user.id
         redirect "/workouts"
       else
-        @error = "Incorrect Password"
+        flash[:message] = "Incorrect Password"
         redirect "/login"
       end
     end
@@ -49,10 +49,10 @@ class UsersController < ApplicationController
 
   post "/signup" do #need all creds, check username exists
     if params[:username].empty? || params[:email].empty? || params[:password].empty? || params[:first_name].empty? || params[:last_name].empty?
-      @error = "Please fill out all the fields"
+      flash[:message] = "Please fill out all the fields"
       redirect "/signup"
     elsif User.find_by(username: params[:username])
-      @error = "Username already taken, please create another"
+      flash[:message] = "Username already taken, please create another"
       redirect "/signup"
     else #create user and log in
         @user = User.create(params)
