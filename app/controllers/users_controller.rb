@@ -3,7 +3,6 @@ class UsersController < ApplicationController
 
   # login
   get "/login" do
-    binding.pry
     if logged_in?
       redirect "/workouts"
     else
@@ -14,7 +13,6 @@ class UsersController < ApplicationController
   post "/login" do
     if params[:username].empty? || params[:password].empty?
       flash[:message] = "Please enter both username and password"
-      binding.pry
       redirect "/login"
     else
       @user = User.find_by(username: params[:username])
