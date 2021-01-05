@@ -61,7 +61,7 @@ class WorkoutsController < ApplicationController
 
     patch "/:username/workouts/:id" do
       if logged_in?
-        if params[:workout][:title] == "" || params[:workout].has_key(:workout_type) == false
+        if params[:workout][:title] == "" || params[:workout].has_key?(:workout_type) == false
           redirect "/#{params[:username]}/workouts/#{params[:id]}/edit"
         else
           @workout = Workout.find(params[:id])
