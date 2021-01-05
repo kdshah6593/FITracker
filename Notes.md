@@ -54,5 +54,6 @@
  -----------------------------
 
 # Additional Features
-1. Add Comments to People's Workouts
-2. Include Videos for Exercises to show form & hitting new goals
+1. Add User ability to update username & password info 
+2. Add Comments to People's Workouts
+3. Include Videos for Exercises to show form & hitting new goals
