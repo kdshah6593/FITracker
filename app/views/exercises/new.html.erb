@@ -1,5 +1,8 @@
 <h1 class="workout-header">Add an Exercise to Your Workout</h1>
-<%= @error %>
+
+<% if flash.has_key?(:message) %>
+    <%= flash[:message] %>
+<% end %>
 
 <div class="add-edit-container">
     <form action="/<%= @workout.user.username %>/workouts/<%= @workout.id %>/exercises" method="POST">

@@ -22,7 +22,7 @@ class ExercisesController < ApplicationController
           @workout.exercises.create(params[:exercise])
           redirect "/#{params[:username]}/workouts/#{params[:id]}"
         else
-          @error = "Exercise must include at least a title"
+          flash[:message] = "Exercise must include at least a title"
           redirect "/#{params[:username]}/workouts/#{params[:id]}/exercises/new"
         end
       else
