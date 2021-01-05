@@ -8,11 +8,21 @@
     <% @workout.exercises.each do |exercise| %>
         <div class="exercise-section">
             <p><%= exercise.title %></p>
-            <p>Sets: <%= exercise.sets %></p>
-            <p>Reps: <%= exercise.reps%></p>
-            <p>Weight: <%= exercise.weight%> lbs</p>
-            <p>Distance: <%= exercise.distance%> miles</p>
-            <p>Duration: <%= exercise.duration %> minutes</p>
+            <% if exercise.sets != nil %>
+                <p>Sets: <%= exercise.sets %></p>
+            <% end %>
+            <% if exercise.reps != nil %>
+                <p>Reps: <%= exercise.reps%></p>
+            <% end %>
+            <% if exercise.weight != nil %>
+                <p>Weight: <%= exercise.weight%> lbs</p>
+            <% end %>
+            <% if exercise.distance != nil %>
+                <p>Distance: <%= exercise.distance%> miles</p>
+            <% end %>
+            <% if exercise.duration != nil %>
+                <p>Duration: <%= exercise.duration %> minutes</p>
+            <% end %>
             <br>
             <% if current_user == exercise.workout.user%>
                 <button class="edit"><a href="/exercises/<%=exercise.id %>/edit">Edit Exercise</a></button>
@@ -21,3 +31,5 @@
         </div>
     <% end %>
 </div>
+
+
