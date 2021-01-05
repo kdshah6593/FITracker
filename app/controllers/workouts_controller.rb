@@ -1,6 +1,5 @@
-
+require 'sinatra/flash'
 class WorkoutsController < ApplicationController
-
 
   #Create
     get "/workouts/new" do

@@ -1,4 +1,4 @@
-
+require 'sinatra/flash'
 class UsersController < ApplicationController
 
   # login
