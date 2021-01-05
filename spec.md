@@ -21,7 +21,8 @@ Specs:
     - when filling out form, when request is posted, checks that certain required fields are not blank
     - for exercise, not all fields may be filled out, so only title is required
     - otherwise, it sends you back to that same form
-- [ ] BONUS - not required - Display validation failures to user with error message (example form URL e.g. /posts/new)
+- [x] BONUS - not required - Display validation failures to user with error message (example form URL e.g. /posts/new)
+    - used sinatra-flash and displayed various error messages when forms filled out incorrectly
 - [x] Your README.md includes a short description, install instructions, a contributors guide and a link to the license for your code
     - listed out how to download and start the webapp, what the webapp is about, including contributors and guide and link to MIT license
 
