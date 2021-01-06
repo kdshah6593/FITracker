@@ -68,11 +68,15 @@ class UsersController < ApplicationController
   # -------------------------------------------------------------------
   # show page for user & all their workouts
   get "/:username" do
-    if logged_in?
-      @user = User.find_by(username: params[:username])
-      erb :"users/show.html"
-    else
-      redirect "/login"
+    begin
+      if logged_in?
+        @user = User.find_by(username: params[:username])
+        erb :"users/show.html"
+      else
+        redirect "/login"
+      end
+    rescue NoMethodError
+      halt(404)
     end
   end
 
