@@ -98,4 +98,9 @@ class WorkoutsController < ApplicationController
       end
     end
   
+  #Error Handling
+    get "/workouts/:nopath" do
+      halt(404)
+    end
+
 end

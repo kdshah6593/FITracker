@@ -3,15 +3,19 @@ class ExercisesController < ApplicationController
 
   #Create
     get "/:username/workouts/:id/exercises/new" do
-      if logged_in?
-        @workout = Workout.find(params[:id])
-        if @workout && @workout.user == current_user
-          erb :"/exercises/new.html"
+      begin
+        if logged_in?
+          @workout = Workout.find(params[:id])
+          if @workout && @workout.user == current_user
+            erb :"/exercises/new.html"
+          else
+            redirect "/#{@workout.user.username}/workouts/#{@workout.id}"
+          end
         else
-          redirect "/#{@workout.user.username}/workouts/#{@workout.id}"
+          redirect "/login"
         end
-      else
-        redirect "/login"
+      rescue ActiveRecord::RecordNotFound
+        halt(404)
       end
     end
 
@@ -33,7 +37,7 @@ class ExercisesController < ApplicationController
   #Edit
     get "/exercises/:id/edit" do
       if logged_in?
-        @exercise = Exercise.find(params[:id])
+        @exercise = Exercise.find_by(id: params[:id])
         if @exercise && @exercise.workout.user == current_user
           erb :"/exercises/edit.html"
         else
@@ -77,6 +81,11 @@ class ExercisesController < ApplicationController
       else
         redirect "/login"
       end
+    end
+
+    #Error Handling
+    get "/exercises/:nopath" do
+      halt(404)
     end
 
 end
