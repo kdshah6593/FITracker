@@ -40,7 +40,7 @@ class WorkoutsController < ApplicationController
       begin
         if logged_in?
           @workout = Workout.find(params[:id])
-          if @workout.user == current_user
+          if @workout.user.username == params[:username]
             erb :"/workouts/show.html"
           else
             redirect "/workouts"
