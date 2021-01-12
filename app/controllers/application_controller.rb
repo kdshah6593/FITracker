@@ -15,6 +15,10 @@ class ApplicationController < Sinatra::Base
     set :session_secret, "secretsecret"
   end
 
+  not_found do
+    redirect '/'
+  end
+
   get "/" do
     erb :welcome
   end

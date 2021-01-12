@@ -97,10 +97,5 @@ class WorkoutsController < ApplicationController
         redirect "/login"
       end
     end
-  
-  #Error Handling
-    get "/workouts/:nopath" do
-      halt(404)
-    end
 
 end
