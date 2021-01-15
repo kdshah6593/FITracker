@@ -3,33 +3,27 @@ class WorkoutsController < ApplicationController
 
   #Create
     get "/workouts/new" do
-      if logged_in?
-        erb :"/workouts/new.html"
-      else
-        redirect "/login"
-      end
+      not_logged_in
+      erb :"/workouts/new.html"
     end
 
     post "/workouts" do
-      if logged_in?
-        if params[:workout][:title] == "" || params[:workout].has_key?(:workout_type) == false
-          flash[:message] = "Make sure to fill out each item"
-          redirect "/workouts/new"
-        else
-          @workout = Workout.create(params[:workout])
-          @workout.user = current_user
-          @workout.save
-          redirect "/#{current_user.username}/workouts/#{@workout.id}"
-        end
+      not_logged_in
+      if params[:workout][:title] == "" || params[:workout].has_key?(:workout_type) == false
+        flash[:message] = "Make sure to fill out each item"
+        redirect "/workouts/new"
       else
-        redirect "/login"
+        @workout = Workout.create(params[:workout])
+        @workout.user = current_user
+        @workout.save
+        redirect "/#{current_user.username}/workouts/#{@workout.id}"
       end
     end
 
   #Read
     get "/workouts" do
       if logged_in?
-        @workouts = Workout.all
+        @workouts_sorted = Workout.order(created_at: :desc)
         erb :"/workouts/index.html"
       else
         redirect "/login"
@@ -94,6 +88,13 @@ class WorkoutsController < ApplicationController
         end
         redirect "/#{params[:username]}"
       else
+        redirect "/login"
+      end
+    end
+
+    private
+    def not_logged_in
+      if !logged_in?
         redirect "/login"
       end
     end

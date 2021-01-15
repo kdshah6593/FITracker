@@ -3,7 +3,6 @@
 <h3 class="workout-subtext">Check out other users' latest workouts</h3>
 <br>
 
-<% @workouts_sorted = @workouts.sort_by {|workout| workout.created_at}.reverse %>
 <% @workouts_sorted.each do |workout| %>
     <div class="workout-section">
         <p><a href="/<%= workout.user.username %>/workouts/<%= workout.id %>"><%= workout.title %></a></p>
