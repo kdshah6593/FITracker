@@ -10,9 +10,14 @@
         <p>Type: <%= workout.workout_type %></p>
         <% if current_user == workout.user %>
             <button class="edit"><a href="/<%= @user.username %>/workouts/<%= workout.id %>/edit">Edit</a></button>
-            <button class="delete"><a href="/<%= @user.username %>/workouts/<%= workout.id %>/delete">Delete</a></button>
+            <form action="/<%= @user.username %>/workouts/<%= workout.id %>/delete" method="POST">
+                <input type="hidden" name="_method" value="DELETE">
+                <input type="submit" value="Delete">
+            </form>
         <% end %>
         <br>
         <p class="right"><%= workout.created_at %></p>
     </div>
 <% end %>
+
+

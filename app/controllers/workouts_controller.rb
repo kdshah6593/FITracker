@@ -64,7 +64,7 @@ class WorkoutsController < ApplicationController
     end
 
   #Delete
-    get "/:username/workouts/:id/delete" do
+    delete "/:username/workouts/:id/delete" do
       not_logged_in
       @workout = Workout.find_by(id: params[:id])
       if @workout && @workout.user == current_user
