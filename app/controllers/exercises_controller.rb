@@ -53,7 +53,7 @@ class ExercisesController < ApplicationController
     end
 
   #Delete
-    get "/exercises/:id/delete" do
+    delete "/exercises/:id/delete" do
       not_logged_in
       @exercise = Exercise.find_by(id: params[:id])
       if @exercise && @exercise.workout.user == current_user

@@ -26,7 +26,10 @@
             <br>
             <% if current_user == exercise.workout.user%>
                 <button class="edit"><a href="/exercises/<%=exercise.id %>/edit">Edit Exercise</a></button>
-                <button class="delete"><a href="/exercises/<%=exercise.id %>/delete">Delete Exercise</a></button>
+                <form action="/exercises/<%=exercise.id %>/delete" method="POST">
+                    <input type="hidden" name="_method" value="DELETE">
+                    <input type="submit" value="Delete Exercise">
+                </form>
             <% end %>
         </div>
     <% end %>
