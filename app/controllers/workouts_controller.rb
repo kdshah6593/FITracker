@@ -28,19 +28,12 @@ class WorkoutsController < ApplicationController
     end
 
     get "/:username/workouts/:id" do
-      begin
-        if logged_in?
-          @workout = Workout.find_by(id: params[:id])
-          if @workout.user.username == params[:username]
-            erb :"/workouts/show.html"
-          else
-            redirect "/workouts"
-          end
-        else
-          redirect "/login"
-        end
-      rescue ActiveRecord::RecordNotFound
-        halt(404)
+      not_logged_in
+      @workout = Workout.find_by(id: params[:id])
+      if @workout.user.username == params[:username]
+        erb :"/workouts/show.html"
+      else
+        redirect "/workouts"
       end
     end
 
