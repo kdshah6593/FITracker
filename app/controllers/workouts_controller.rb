@@ -74,10 +74,10 @@ class WorkoutsController < ApplicationController
     end
 
     private
-    def not_logged_in
-      if !logged_in?
-        redirect "/login"
-      end
-    end
+    # def not_logged_in
+    #   if !logged_in?
+    #     redirect "/login"
+    #   end
+    # end
 
 end
