@@ -3,16 +3,12 @@ class ExercisesController < ApplicationController
 
   #Create
     get "/:username/workouts/:id/exercises/new" do
-      begin
-        not_logged_in
-        @workout = Workout.find_by(id: params[:id])
-        if @workout && @workout.user == current_user
-          erb :"/exercises/new.html"
-        else
-          redirect "/#{@workout.user.username}/workouts/#{@workout.id}"
-        end
-      rescue ActiveRecord::RecordNotFound
-        halt(404)
+      not_logged_in
+      @workout = Workout.find_by(id: params[:id])
+      if @workout && @workout.user == current_user
+        erb :"/exercises/new.html"
+      else
+        redirect "/#{@workout.user.username}/workouts/#{@workout.id}"
       end
     end
 
