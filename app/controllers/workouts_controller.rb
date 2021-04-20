@@ -30,7 +30,7 @@ class WorkoutsController < ApplicationController
     get "/:username/workouts/:id" do
       not_logged_in
       @workout = Workout.find_by(id: params[:id])
-      if @workout.user.username == params[:username]
+      if @workout && @workout.user.username == params[:username]
         erb :"/workouts/show.html"
       else
         redirect "/workouts"
