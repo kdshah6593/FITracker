@@ -22,12 +22,9 @@ class WorkoutsController < ApplicationController
 
   #Read
     get "/workouts" do
-      if logged_in?
-        @workouts_sorted = Workout.order(created_at: :desc)
-        erb :"/workouts/index.html"
-      else
-        redirect "/login"
-      end
+      not_logged_in
+      @workouts_sorted = Workout.order(created_at: :desc)
+      erb :"/workouts/index.html"
     end
 
     get "/:username/workouts/:id" do
@@ -49,47 +46,38 @@ class WorkoutsController < ApplicationController
 
   #Edit
     get "/:username/workouts/:id/edit" do
-      if logged_in?
-        @workout = Workout.find(params[:id])
-        if @workout && @workout.user == current_user
-          erb :"/workouts/edit.html"
-        else
-          redirect "/#{params[:username]}"
-        end
+      not_logged_in
+      @workout = Workout.find(params[:id])
+      if @workout && @workout.user == current_user
+        erb :"/workouts/edit.html"
       else
-        redirect "/login"
+        redirect "/#{params[:username]}"
       end
     end
 
     patch "/:username/workouts/:id" do
-      if logged_in?
-        if params[:workout][:title] == "" || params[:workout].has_key?(:workout_type) == false
-          redirect "/#{params[:username]}/workouts/#{params[:id]}/edit"
-        else
-          @workout = Workout.find(params[:id])
-          if @workout && @workout.user == current_user
-            @workout.update(params[:workout])
-            redirect "/#{params[:username]}/workouts/#{params[:id]}"
-          else
-            redirect "/workouts"
-          end
-        end
+      not_logged_in
+      if params[:workout][:title] == "" || params[:workout].has_key?(:workout_type) == false
+        redirect "/#{params[:username]}/workouts/#{params[:id]}/edit"
       else
-        redirect "/login"
+        @workout = Workout.find(params[:id])
+        if @workout && @workout.user == current_user
+          @workout.update(params[:workout])
+          redirect "/#{params[:username]}/workouts/#{params[:id]}"
+        else
+          redirect "/workouts"
+        end
       end
     end
 
   #Delete
     get "/:username/workouts/:id/delete" do
-      if logged_in?
-        @workout = Workout.find(params[:id])
-        if @workout && @workout.user == current_user
-          @workout.destroy
-        end
-        redirect "/#{params[:username]}"
-      else
-        redirect "/login"
+      not_logged_in
+      @workout = Workout.find(params[:id])
+      if @workout && @workout.user == current_user
+        @workout.destroy
       end
+      redirect "/#{params[:username]}"
     end
 
     private
