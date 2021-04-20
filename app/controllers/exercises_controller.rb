@@ -5,7 +5,7 @@ class ExercisesController < ApplicationController
     get "/:username/workouts/:id/exercises/new" do
       begin
         if logged_in?
-          @workout = Workout.find(params[:id])
+          @workout = Workout.find_by(id: params[:id])
           if @workout && @workout.user == current_user
             erb :"/exercises/new.html"
           else
@@ -22,7 +22,7 @@ class ExercisesController < ApplicationController
     post "/:username/workouts/:id/exercises" do
       if logged_in?
         if !params[:exercise][:title].empty?
-          @workout = Workout.find(params[:id])
+          @workout = Workout.find_by(id: params[:id])
           @workout.exercises.create(params[:exercise])
           redirect "/#{params[:username]}/workouts/#{params[:id]}"
         else
@@ -53,7 +53,7 @@ class ExercisesController < ApplicationController
         if params[:exercise][:title] == ""
           redirect "exercises/#{params[:id]}/edit"
         else
-          @exercise = Exercise.find(params[:id])
+          @exercise = Exercise.find_by(id: params[:id])
           if @exercise && @exercise.workout.user == current_user
             @exercise.update(params[:exercise])
             @workout = Workout.find(@exercise.workout_id)
@@ -71,7 +71,7 @@ class ExercisesController < ApplicationController
   #Delete
     get "/exercises/:id/delete" do
       if logged_in?
-        @exercise = Exercise.find(params[:id])
+        @exercise = Exercise.find_by(id: params[:id])
         if @exercise && @exercise.workout.user == current_user
           @workout = Workout.find(@exercise.workout_id)
           @exercise.destroy
