@@ -287,3 +287,17 @@ div.error {
   color: red;
   padding: 3px;
 }
+
+input[type="submit"].formDelete {
+  background-color: #80f080;
+  border: none;
+  border-radius: 5px;
+  margin: 4px 2px;
+  text-align: center;
+  padding: 5px 10px;
+}
+
+input[type="submit"].formDelete:hover {
+  background-color: #59a859;
+  cursor: pointer;
+}

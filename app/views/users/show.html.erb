@@ -12,7 +12,7 @@
             <button class="edit"><a href="/<%= @user.username %>/workouts/<%= workout.id %>/edit">Edit</a></button>
             <form action="/<%= @user.username %>/workouts/<%= workout.id %>/delete" method="POST">
                 <input type="hidden" name="_method" value="DELETE">
-                <input type="submit" value="Delete">
+                <input class='formDelete' type="submit" value="Delete">
             </form>
         <% end %>
         <br>
